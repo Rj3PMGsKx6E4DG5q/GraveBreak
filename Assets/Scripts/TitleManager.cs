@@ -209,7 +209,7 @@ public class TitleManager : MonoBehaviour
 
 
 	public const int RECORD_PAGE_NUM = 3;
-	public const int HELP_PAGE_NUM = 10;
+	public const int HELP_PAGE_NUM = 9;
 
 	private State state;
 	private float time;
