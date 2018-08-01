@@ -73,33 +73,15 @@ public class Language
 	public const int GACHA_LOTTERY_CHARA			= 67;
 	public const int GACHA_LOTTERY_LIFE				= 68;
 	public const int GACHA_SKIP						= 69;
-	public const int INFORMATION_TITLE				= 70;
-	public const int INFORMATION_EXPLANATION		= 71;
-	public const int LOGIN_BONUS_TEXT				= 72;
-	public const int RANKING_FIRST_EXPLANATION		= 73;
-	public const int RANKING_REGISTED_EXPLANATION	= 74;
-	public const int LOGIN_BIGINNER					= 75;
-	public const int LOGIN_FINISH					= 76;
-	public const int RANKING_NAME_CHANGE_CORRECT	= 77;
-	public const int RANKING_NAME_CHANGE_INCORRECT	= 78;
-	public const int RANKING_NAME_CHANGE			= 79;
-	public const int OFFLINE						= 80;
-
-
-	public const string INFORMATION_VER120_TITLE_JP = "Ver.1.2.0 バージョンアップ情報";
-	public const string INFORMATION_VER120_TITLE_EN = "Ver.1.2.0 Information";
-	public const string INFORMATION_VER120_JP = "1.新キャラクターを追加しました。\nキャラクターによって、武器を投げ\nて敵を倒すことが出来るようになり\nました。\n\n2.ヘルプを追加しました。\n\n3.ランキングへの参加が簡単に\nなりました。\n（自動でIDを割り振ります）";
-	public const string INFORMATION_VER120_EN = "1.Added 5th new character.\nPart of new character became \nable to throw weapon and \ndefeat the enemy.\n\n2.Added a help page.\n\n3.Easy commit to ranking.\n(Give an ID automatic)";
-
-	public const string INFORMATION_VER123_TITLE_JP = "Ver.1.2.3 バージョンアップ情報";
-	public const string INFORMATION_VER123_TITLE_EN = "Ver.1.2.3 Information";
-	public const string INFORMATION_VER123_JP = "・ガチャのキャラクター出現率を\n10%から20%に変更しました。";
-	public const string INFORMATION_VER123_EN = "- Gacha lottery rate changed \n10% to 20%.";
-
-	public const string INFORMATION_VER124_TITLE_JP = "Ver.1.2.4 バージョンアップ情報";
-	public const string INFORMATION_VER124_TITLE_EN = "Ver.1.2.4 Information";
-	public const string INFORMATION_VER124_JP = "・操作性を改善しました。\nダブルタップによる穴掘り穴埋めを\nシングルタップの長押しに変更しま\nした。";
-	public const string INFORMATION_VER124_EN = "- Improve of operation.\nDig a hole / To fill a hole,\nchanged from double tap to \nsingle tap(Long press).";
+	public const int LOGIN_BONUS_TEXT				= 70;
+	public const int RANKING_FIRST_EXPLANATION		= 71;
+	public const int RANKING_REGISTED_EXPLANATION	= 72;
+	public const int LOGIN_BIGINNER					= 73;
+	public const int LOGIN_FINISH					= 74;
+	public const int RANKING_NAME_CHANGE_CORRECT	= 75;
+	public const int RANKING_NAME_CHANGE_INCORRECT	= 76;
+	public const int RANKING_NAME_CHANGE			= 77;
+	public const int OFFLINE						= 78;
 
 
 	public static Dictionary<int, string> sentence = sentenceJa;
@@ -112,8 +94,10 @@ public class Language
 		{GAME_READY_APPEAR_SAMURAI,		"侍以外の敵をすべて倒す\nもしくはタイムが０になるまで逃げる"},
 		{GAME_READY_APPEAR_BOSS,		"ボスを倒す"},
 
-		{GAME_PAUSE,					"動画を視聴すると残機が５機増えます。"},
-		{GAME_CONTINUE,					"CONTINUEを選ぶとゲームオーバーしたステージの\n始めからゲームに復帰します。\n広告が出た時点で１機増えます。\nPLAY MOVIEを選ぶと動画広告が始まり、最後まで\n視聴すると残機が５機に増えてゲームに復帰出来ます。"},
+		//{GAME_PAUSE,					"動画を視聴すると残機が５機増えます。"},
+		//{GAME_CONTINUE,					"CONTINUEを選ぶとゲームオーバーしたステージの\n始めからゲームに復帰します。\n広告が出た時点で１機増えます。\nPLAY MOVIEを選ぶと動画広告が始まり、最後まで\n視聴すると残機が５機に増えてゲームに復帰出来ます。"},
+		{GAME_PAUSE,					""},
+		{GAME_CONTINUE,					"CONTINUEを選ぶとゲームオーバーしたステージの\n始めからゲームに復帰します。\nTITLEを選ぶとタイトルへ戻ります。"},
 		{GAME_HELP,						"この画面は、次回以降表示されません。\nヘルプからいつでも確認出来ます。"},
 		{GAME_TUTORIAL_1,				"墓で敵を倒せます。"},
 		{GAME_TUTORIAL_2,				"穴に落として埋めると敵を倒せます。"},
@@ -160,7 +144,7 @@ public class Language
 		{LOGOUT,						"ログアウトしました"},
 		{REQUEST_OVERLOAD,				"申し訳ございません。\nランキングサーバーの使用制限が超過しました。\n次月までお待ちください。"},
 		{RANKING_THISSYSTEM,			"ランキングには、NIFTYクラウドを利用しています。"},
-		{CHARANAME_SAMURAI,				"侍"},
+		{CHARANAME_SAMURAI,				"プレイヤー"},
 		{CHARANAME_KUNOICHI,			"くノ一"},
 		{CHARANAME_NINJA,				"忍者"},
 		{CHARANAME_MIKO,				"巫女"},
@@ -172,8 +156,6 @@ public class Language
 		{GACHA_LOTTERY_CHARA,			"キャラクターを引く確率 20%"},
 		{GACHA_LOTTERY_LIFE,			"残機数アップを引く確率 80%"},
 		{GACHA_SKIP,					"タップでスキップ出来ます"},
-		{INFORMATION_TITLE,				INFORMATION_VER124_TITLE_JP},
-		{INFORMATION_EXPLANATION,		INFORMATION_VER124_JP},
 		{LOGIN_BONUS_TEXT,				"いつも遊んでくれて\nありがとう！\nガチャチケットを2枚プレゼントします。\n\n<color=#ff0000>※アプリを起動すると、１日１回ガチャチケットが手に入る時があります。</color>"},
 		{RANKING_FIRST_EXPLANATION,		"名前とパスワードは、登録完了時に自動で割り降られます。※後から変更可能です。\n登録完了後、名前とパスワードはアプリ内に保持しますので、次回よりランキングを選択後は、自動でログインします。"},
 		{RANKING_REGISTED_EXPLANATION,	"アプリを消したり、データ消去を行うと再度、登録から行う必要があります。ご注意ください。"},
@@ -193,8 +175,10 @@ public class Language
 		{GAME_READY_APPEAR_SAMURAI,		"Beat without Security Samurai.Or run away by time zero."},
 		{GAME_READY_APPEAR_BOSS,		"Beat the Boss!"},
 		
-		{GAME_PAUSE,					"It is added 5 life\nif you will play movie."},
-		{GAME_CONTINUE,					"Restart to play from the stage when you choose\nCONTINUE button. And add a life if appear ads.\nThe movie ads begins when choose\nPLAY MOVIE button. If you finished to watch the\nmovie ads, you can continue to play with 5 life."},
+		//{GAME_PAUSE,					"It is added 5 life\nif you will play movie."},
+		//{GAME_CONTINUE,					"Restart to play from the stage when you choose\nCONTINUE button. And add a life if appear ads.\nThe movie ads begins when choose\nPLAY MOVIE button. If you finished to watch the\nmovie ads, you can continue to play with 5 life."},
+		{GAME_PAUSE,					""},
+		{GAME_CONTINUE,					"Restart to play from the stage when you choose\nCONTINUE button.\nIf you press the TITLE button to move to the title screen."},
 		{GAME_HELP,						"This screen does not draw next time after.\nAlways confirm from help available."},
 		{GAME_TUTORIAL_1,				"Beat enemies using tomb."},
 		{GAME_TUTORIAL_2,				"Drop to the hole and fill it."},
@@ -241,7 +225,7 @@ public class Language
 		{LOGOUT,						"Logged out."},
 		{REQUEST_OVERLOAD,				"So sorry. To request is over load\nto ranking server.\nPlease wait next month."},
 		{RANKING_THISSYSTEM,			"This ranking system uses NIFTY Cloud."},
-		{CHARANAME_SAMURAI,				"Samurai"},
+		{CHARANAME_SAMURAI,				"PLAYER"},
 		{CHARANAME_KUNOICHI,			"Kunoichi"},
 		{CHARANAME_NINJA,				"Ninja"},
 		{CHARANAME_MIKO,				"Miko"},
@@ -253,8 +237,6 @@ public class Language
 		{GACHA_LOTTERY_CHARA,			"Lottery of Character 20%"},
 		{GACHA_LOTTERY_LIFE,			"Lottery of Life up 80%"},
 		{GACHA_SKIP,					"Tap to skip"},
-		{INFORMATION_TITLE,				INFORMATION_VER124_TITLE_EN},
-		{INFORMATION_EXPLANATION,		INFORMATION_VER124_EN},
 		{LOGIN_BONUS_TEXT,				"Thank you playing all the time!\nIt's presents two Gacha Ticket for you.\n\n<color=#ff0000>*When you start the game, you may get the Gacha Ticket once a day possibility.</color>"},
 		{RANKING_FIRST_EXPLANATION,		"Your name and password are decided automatic when registed. *Possible to change after registed. After finish of regist, your name and password save in application. It is logined automatic next time and more. When you application uninstalled, or removed data of the smartphone, please login again."},
 		{RANKING_REGISTED_EXPLANATION,	"If the appliation is removed or the data is removed, need to regist again. Please be careful."},

@@ -143,7 +143,7 @@ public class TitleManager : MonoBehaviour
 						this.Wait ();
 					}
 
-					int index = (int)this.imageTime % 2;
+					int index = ((int)this.imageTime % 4) >> 1;
 					switch (index) {
 					case 0:
 						this.imageIndex = IMAGE_0;
