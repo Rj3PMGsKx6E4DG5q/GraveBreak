@@ -72,8 +72,8 @@ public class MainManager : MonoBehaviour
 	}
 
 
-	[HideInInspector]
-	public bool isDebug;
+	public bool isDebug = false;
+	public int debugStage = 1;
 
 	[HideInInspector]
 	public int selectCharacter;
@@ -96,8 +96,9 @@ public class MainManager : MonoBehaviour
 		this.SetResolution (Data.SCREEN_RESOLUTION);
 		this.RecordLoad ();
 
-
-		this.isDebug = false;
+		if (isDebug) {
+			stage = debugStage - 1;
+		}
 	}
 
 
