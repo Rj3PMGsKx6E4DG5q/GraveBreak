@@ -230,6 +230,7 @@ public class TitleManager : MonoBehaviour
 	private GameObject goMenuVolumeOff;
 	private GameObject goMenuBird;
 	private GameObject goMenuTwitter;
+	private GameObject goMenuHiscore;
 
 	private GameObject goRecordPage;
 	private GameObject goRecordPoint;
@@ -323,6 +324,7 @@ public class TitleManager : MonoBehaviour
 		goMenuVolumeOff					= goMenu.transform.Find ("Volume/Off").gameObject;
 		goMenuBird						= goMenu.transform.Find ("Bird").gameObject;
 		goMenuTwitter					= goMenu.transform.Find ("Twitter").gameObject;
+		goMenuHiscore					= goMenu.transform.Find ("Hiscore/Hiscore").gameObject;
 
 		goRecordPage					= goRecord.transform.Find ("Page").gameObject;
 		goRecordPoint					= goRecord.transform.Find ("Point").gameObject;
@@ -360,6 +362,7 @@ public class TitleManager : MonoBehaviour
 			goMenuButtonStart.transform.localPosition = goMenuButtonContinue.transform.localPosition;
 			goMenuButtonContinue.SetActive (false);
 		}
+		goMenuHiscore					.GetComponent<Text> ().text = MainManager.Instance.scoreHigh.ToString("D7");
 
 		goRecordButtonBack				.GetComponent<Button> ().onClick.AddListener (() => OnButton (State.Menu, false));
 		goRecordArrowRight				.GetComponent<Button> ().onClick.AddListener (() => OnCatalogNextPage ());
