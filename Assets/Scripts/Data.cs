@@ -290,8 +290,8 @@ public class Data
 
 
 	private static PlayerData playerData = new PlayerData (){
-		speed		= SPEED_8,
-		sandalSpeed = SPEED_12,
+		speed		= SPEED_12,
+		sandalSpeed = SPEED_16,
 		fallTime	= 2,
 		bathTime	= 10,
 		hideTime	= 10,

@@ -32,8 +32,9 @@ public class MainManager : MonoBehaviour
 
 
 
-	public const int START_LIFE = 2;
+	public const int START_LIFE = 5;
 	public const int START_WEAPON = 0;
+	public const int CONTINUE_LIFE = 2;
 
 
 	private State state;

@@ -2528,7 +2528,7 @@ public class GameManager : MonoBehaviour
 					switch (continueCommand) {
 					case CONTINUE_COMMAND_YES:
 						{
-							MainManager.Instance.CurrentStage (life.now, 0);
+							MainManager.Instance.CurrentStage (MainManager.CONTINUE_LIFE, 0);
 
 							/*
 							collectContinue.go.SetActive (false);
