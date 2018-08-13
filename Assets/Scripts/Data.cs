@@ -101,8 +101,8 @@ public class Data
 	}
 
 
-	public const string URL								= "https://play.google.com/store/apps/details?id=com.kohchanstudio.SamuraiDrama";
-	public const string URL_IOS							= "https://itunes.apple.com/us/app/samurai-drama/id1308795627?l=ja&ls=1&mt=8";
+	public const string URL								= "https://play.google.com/store/apps/details?id=com.KohchanStudio.GraveBreak";
+	public const string URL_IOS							= "https://itunes.apple.com/us/app/grave-break/id1364386526?l=ja&ls=1&mt=8";
 	public const string MORE_GAME_PACKAGENAME_ANDROID	= "market://details?id=com.KohchanStudio.ShogiPuzzle";
 	//public const string MORE_GAME_PACKAGENAME_IOS		= "http://appstore.com/将棋駒でパズル";
 	public const string MORE_GAME_PACKAGENAME_IOS		= "itms-apps://itunes.apple.com/app/id1330151898";
@@ -248,28 +248,28 @@ public class Data
 	public const string FIREBASE_EVENT_PAUSE_ADS			= "ePauseAds";
 
 	#if UNITY_ANDROID
-	public const string BANNER_ID = "ca-app-pub-5046886791626891/4433384200";
+	public const string BANNER_ID = "ca-app-pub-5046886791626891/5221430889";
 	#elif UNITY_IPHONE
-	public const string BANNER_ID = "ca-app-pub-5046886791626891/3270948913";
+	public const string BANNER_ID = "ca-app-pub-5046886791626891/9460058798";
 	#else
-	public const string BANNER_ID = "ca-app-pub-5046886791626891/4433384200";
+	public const string BANNER_ID = "ca-app-pub-5046886791626891/5221430889";
 	#endif
 
 	#if UNITY_ANDROID
 	public const string INTERSTITIAL_ID = "ca-app-pub-5046886791626891/6085022007";
 	#elif UNITY_IPHONE
-	public const string INTERSTITIAL_ID = "ca-app-pub-5046886791626891/8244784432";
+	public const string INTERSTITIAL_ID = "ca-app-pub-5046886791626891/8427862932";
 	#else
 	public const string INTERSTITIAL_ID = "ca-app-pub-5046886791626891/6085022007";
 	#endif
 
 	// ガチャやゲームオーバー時用、Gacha Ticket or Life.
 	#if UNITY_ANDROID
-	public const string INTERSTITIAL_NOMOVIE_ID = "ca-app-pub-5046886791626891/4106920801";
+	public const string INTERSTITIAL_NOMOVIE_ID = "ca-app-pub-5046886791626891/3802222215";
 	#elif UNITY_IPHONE
 	public const string INTERSTITIAL_NOMOVIE_ID = "ca-app-pub-5046886791626891/3179129747";
 	#else
-	public const string INTERSTITIAL_NOMOVIE_ID = "ca-app-pub-5046886791626891/4106920801";
+	public const string INTERSTITIAL_NOMOVIE_ID = "ca-app-pub-5046886791626891/3802222215";
 	#endif
 
 

@@ -6,6 +6,7 @@ using System.Collections;
 using System.Collections.Generic;
 using System;
 using System.Linq;
+using GoogleMobileAds.Api;
 using Hakaima;
 
 
@@ -72,13 +73,28 @@ public class MainManager : MonoBehaviour
 		}
 	}
 
+	public BannerView bannerView		{ get; private set; }
+	public InterstitialAd interstitial	{ get; private set; }
 
 	public bool isDebug = false;
 	public int debugStage = 1;
 
 	[HideInInspector]
 	public int selectCharacter;
+	// 起動時に情報を出すための番号.
+	[HideInInspector]
+	public int informationNumber;
+	[HideInInspector]
+	public bool isInterstitialClose;
 
+	private void InitBanner()
+	{
+		if (this.bannerView != null)
+			this.bannerView.Destroy ();
+		this.bannerView = new BannerView (Data.BANNER_ID, AdSize.Banner, AdPosition.Bottom);
+		this.bannerView.LoadAd (new AdRequest.Builder ().Build ());
+		this.bannerView.Hide ();
+	}
 
 
 	private void Start ()
@@ -90,6 +106,9 @@ public class MainManager : MonoBehaviour
 //		yield return StartCoroutine (RequestData ());
 //		enabled = true;
 
+
+		this.interstitial = new InterstitialAd (Data.INTERSTITIAL_ID);
+		this.interstitial.LoadAd (new AdRequest.Builder ().Build ());
 
 		this.state = State.Title;
 		this.time = 0;
@@ -118,6 +137,7 @@ public class MainManager : MonoBehaviour
 					SoundManager.Instance.StopBgm ();
 					SoundManager.Instance.StopSe ();
 
+					InitBanner ();
 
 					GameObject go = Instantiate (Resources.Load<GameObject> ("Prefabs/TitleManager"));
 					go.transform.SetParent (transform);
@@ -138,6 +158,7 @@ public class MainManager : MonoBehaviour
 					if (!this.isTutorial)
 						SoundManager.Instance.StopBgm ();
 
+					InitBanner ();
 
 					GameObject go = Instantiate (Resources.Load<GameObject> ("Prefabs/GameManager"));
 					go.transform.SetParent (transform);
@@ -335,6 +356,54 @@ public class MainManager : MonoBehaviour
 		Screen.SetResolution (width, height, true, 15);
 	}
 
+
+	public void ShowInterstitial (Action action)
+	{
+		if (interstitial.IsLoaded ()) {
+			interstitial.OnAdClosed += (sender, e) => {
+				interstitial.Destroy ();
+				interstitial = new InterstitialAd (Data.INTERSTITIAL_ID);
+				interstitial.LoadAd (new AdRequest.Builder ().Build ());
+
+				action ();
+			};
+			interstitial.Show ();
+		}
+	}
+
+
+	public void ShowInterstitialNoMovie ()
+	{
+		// 広告を初期化する
+		InterstitialAd interstitial = new InterstitialAd(Data.INTERSTITIAL_ID); 
+		AdRequest.Builder builder = new AdRequest.Builder();
+		AdRequest request = builder.Build();
+
+		// 広告が表示可能になったときのコールバック
+		interstitial.OnAdLoaded += (handler, EventArgs) =>
+		{
+			// 広告を表示する
+			interstitial.Show();
+		};
+
+		// 広告が閉じられたときのコールバック
+		interstitial.OnAdClosed += (handler, EventArgs) =>
+		{
+			// 後処理
+			interstitial.Destroy();
+			isInterstitialClose = true;
+		};
+
+		// 広告がエラーになったときのコールバック
+		interstitial.OnAdFailedToLoad += (handler, EventArgs) =>
+		{
+			// エラー処理
+			interstitial.Destroy();
+		};
+
+		// インタースティシャル広告のロード
+		interstitial.LoadAd(request);
+	}
 
 	
 	public bool IsWeaponCharacter (int num)

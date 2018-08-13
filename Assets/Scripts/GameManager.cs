@@ -2152,6 +2152,7 @@ public class GameManager : MonoBehaviour
 									state = State.Continue;
 									time = 0;
 									loop = true;
+									MainManager.Instance.ShowInterstitialNoMovie();
 								} else {
 									life.now--;
 									player.Rise ();

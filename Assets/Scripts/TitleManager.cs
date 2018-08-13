@@ -418,6 +418,7 @@ public class TitleManager : MonoBehaviour
 		goHelp.SetActive (false);
 		goCaution.SetActive (false);
 		goEnd.SetActive (false);
+		MainManager.Instance.bannerView.Hide ();
 
 		switch (this.state) {
 		case State.Menu:
@@ -427,6 +428,7 @@ public class TitleManager : MonoBehaviour
 				time = 0;
 				birdIndex = 0;
 				bird.Init (800);
+				MainManager.Instance.bannerView.Show ();
 			}
 			break;
 		case State.Record:
@@ -581,6 +583,7 @@ public class TitleManager : MonoBehaviour
 	{
 		MainManager.Instance.StoryPrologue ();
 		MainManager.Instance.RecordSave ();
+		MainManager.Instance.bannerView.Hide ();
 		SoundManager.Instance.PlaySe (SoundManager.SeName.SE_OK);
 	}
 
@@ -596,6 +599,7 @@ public class TitleManager : MonoBehaviour
 	private void OnMenuButtonContinue ()
 	{
 		MainManager.Instance.CurrentStage (MainManager.Instance.life, MainManager.Instance.weapon);
+		MainManager.Instance.bannerView.Hide ();
 		SoundManager.Instance.PlaySe (SoundManager.SeName.SE_OK);
 	}
 
