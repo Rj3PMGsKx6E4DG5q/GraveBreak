@@ -448,9 +448,14 @@ public class GameManager : MonoBehaviour
 		public GameObject goDescription;
 		public GameObject goClear;
 		public GameObject goEncourage;
+		public GameObject goButtonHowTo;
 		public GameObject goButtonBack;
 		public GameObject goVolumeOn;
 		public GameObject goVolumeOff;
+		public GameObject goHowTo;
+		public GameObject goHowToImageJp;
+		public GameObject goHowToImageEn;
+		public GameObject goHowToButtonClose;
 	}
 
 
@@ -723,9 +728,14 @@ public class GameManager : MonoBehaviour
 		collectPause.goDescription		= collectPause.go.transform.Find ("Description").gameObject;
 		collectPause.goClear			= collectPause.go.transform.Find ("Clear").gameObject;
 		collectPause.goEncourage		= collectPause.go.transform.Find ("Encourage").gameObject;
+		collectPause.goButtonHowTo		= collectPause.go.transform.Find ("ButtonHowTo").gameObject;
 		collectPause.goButtonBack		= collectPause.go.transform.Find ("ButtonBack").gameObject;
 		collectPause.goVolumeOn			= collectPause.go.transform.Find ("Volume/On").gameObject;
 		collectPause.goVolumeOff		= collectPause.go.transform.Find ("Volume/Off").gameObject;
+		collectPause.goHowTo			= collectPause.go.transform.Find ("HowTo").gameObject;
+		collectPause.goHowToImageJp		= collectPause.go.transform.Find ("HowTo/Image").gameObject;
+		collectPause.goHowToImageEn		= collectPause.go.transform.Find ("HowTo/Image_en").gameObject;
+		collectPause.goHowToButtonClose	= collectPause.go.transform.Find ("HowTo/ButtonClose").gameObject;
 
 		collectClear					= new CollectClear ();
 		collectClear.go					= transform.Find ("UI/Logo/Clear").gameObject;
@@ -822,9 +832,11 @@ public class GameManager : MonoBehaviour
 		goOwnerItemList [2].GetComponent<Button> ().onClick.AddListener (() => OnItem (ownerItemList [2]));
 		goOwnerItemList [3].GetComponent<Button> ().onClick.AddListener (() => OnItem (ownerItemList [3]));
 
+		collectPause.goButtonHowTo			.GetComponent<Button> ().onClick.AddListener (() => OnHowTo (true));
 		collectPause.goButtonBack			.GetComponent<Button> ().onClick.AddListener (() => OnPause (false));
 		collectPause.goVolumeOn				.GetComponent<Button> ().onClick.AddListener (() => OnVolume (true));
 		collectPause.goVolumeOff			.GetComponent<Button> ().onClick.AddListener (() => OnVolume (false));
+		collectPause.goHowToButtonClose		.GetComponent<Button> ().onClick.AddListener (() => OnHowTo (false));
 		collectContinue.goButtonContinue	.GetComponent<Button> ().onClick.AddListener (() => OnContinue (CONTINUE_COMMAND_YES));
 		collectContinue.goButtonEnd			.GetComponent<Button> ().onClick.AddListener (() => OnContinue (CONTINUE_COMMAND_NO));
 
@@ -3178,11 +3190,26 @@ public class GameManager : MonoBehaviour
 			if (this.isPause) {
 				SoundManager.Instance.PlaySe (SoundManager.SeName.SE_OK);
 			} else {
+				collectPause.goHowTo.SetActive (isPause);
 				SoundManager.Instance.PlaySe (SoundManager.SeName.SE_CANCEL);
 			}
 		}
 	}
-	
+
+
+
+	private void OnHowTo(bool isHowTo)
+	{
+		collectPause.goHowToImageJp.SetActive (Application.systemLanguage == SystemLanguage.Japanese);
+		collectPause.goHowToImageEn.SetActive (Application.systemLanguage != SystemLanguage.Japanese);
+
+		collectPause.goHowTo.SetActive (isHowTo);
+		if (isHowTo) {
+			SoundManager.Instance.PlaySe (SoundManager.SeName.SE_OK);
+		} else {
+			SoundManager.Instance.PlaySe (SoundManager.SeName.SE_CANCEL);
+		}
+	}
 	
 	
 	private Player.Compass checkCompass;
