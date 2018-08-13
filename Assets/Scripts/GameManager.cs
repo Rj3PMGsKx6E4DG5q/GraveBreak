@@ -3189,8 +3189,10 @@ public class GameManager : MonoBehaviour
 			this.isPause = isPause;
 			collectPause.go.SetActive (isPause);
 			if (this.isPause) {
+				MainManager.Instance.bannerView.Show ();
 				SoundManager.Instance.PlaySe (SoundManager.SeName.SE_OK);
 			} else {
+				MainManager.Instance.bannerView.Hide ();
 				collectPause.goHowTo.SetActive (isPause);
 				SoundManager.Instance.PlaySe (SoundManager.SeName.SE_CANCEL);
 			}
