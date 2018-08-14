@@ -119,6 +119,10 @@ public class MainManager : MonoBehaviour
 		if (isDebug) {
 			stage = debugStage - 1;
 		}
+
+		if (Screen.height == Data.SCREEN_IPHONE_X_HIEGHT) {
+			Camera.main.orthographicSize = Data.SCREEN_IPHONE_X_WIDTH;
+		}
 	}
 
 

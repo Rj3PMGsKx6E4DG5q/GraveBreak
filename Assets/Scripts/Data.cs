@@ -113,6 +113,8 @@ public class Data
 	public const int SCREEN_WIDTH						= 1080;
 	public const int SCREEN_HEIGHT						= 1920;
 	public const int SCREEN_RESOLUTION					= 1024;
+	public const int SCREEN_IPHONE_X_WIDTH				= 1125;
+	public const int SCREEN_IPHONE_X_HIEGHT				= 2436;
 
 	public const int LENGTH_X							= 10;
 	public const int LENGTH_Y							= 17;
