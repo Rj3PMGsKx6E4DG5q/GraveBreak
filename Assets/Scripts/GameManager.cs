@@ -2203,10 +2203,15 @@ public class GameManager : MonoBehaviour
 						{
 							int pointX = Mathf.FloorToInt ((weapon.positionX + weapon.size / 2) / weapon.size);
 							int pointY = Mathf.FloorToInt ((weapon.positionY + weapon.size / 2) / weapon.size);
-							//ここでバグる
-							Chip chip = chipList [pointX + pointY * Data.LENGTH_X];
-							if (chip.obstacleList.Exists (obj => !Data.GetObstacleData (obj.type).isThrough))
+							// 画面外になったら即終了 2018.9.19 iwasaki.
+							if (chipList.Count <= (pointX + pointY * Data.LENGTH_X) || (pointX + pointY * Data.LENGTH_X) < 0) {
 								isEnd = true;
+							}
+							else {
+								Chip chip = chipList [pointX + pointY * Data.LENGTH_X];
+								if (chip.obstacleList.Exists (obj => !Data.GetObstacleData (obj.type).isThrough))
+								isEnd = true;
+							}
 						}
 						if (isEnd) {
 							Destroy (groupEnemyWeaponList [i].gameObject);
