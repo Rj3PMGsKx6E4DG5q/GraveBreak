@@ -226,8 +226,8 @@ PlayerSettings:
   AndroidTargetDevice: 0
   AndroidSplashScreenScale: 0
   androidSplashScreen: {fileID: 0}
-  AndroidKeystoreName: 
-  AndroidKeyaliasName: 
+  AndroidKeystoreName: Data/GraveBreak.keystore
+  AndroidKeyaliasName: ko-chan_studio
   AndroidTVCompatibility: 1
   AndroidIsGame: 1
   AndroidEnableTango: 0
@@ -243,7 +243,7 @@ PlayerSettings:
   - m_BuildTarget: Android
     m_Icons:
     - serializedVersion: 2
-      m_Icon: {fileID: 2800000, guid: 0dbbbda7db50a7e4fb9177470b6b97bd, type: 3}
+      m_Icon: {fileID: 2800000, guid: 6808a2bf1d83e415e9fccb486fa8b3ea, type: 3}
       m_Width: 192
       m_Height: 192
       m_Kind: 0

@@ -379,7 +379,7 @@ public class MainManager : MonoBehaviour
 	public void ShowInterstitialNoMovie ()
 	{
 		// 広告を初期化する
-		InterstitialAd interstitial = new InterstitialAd(Data.INTERSTITIAL_ID); 
+		InterstitialAd interstitial = new InterstitialAd(Data.INTERSTITIAL_NOMOVIE_ID); 
 		AdRequest.Builder builder = new AdRequest.Builder();
 		AdRequest request = builder.Build();
 

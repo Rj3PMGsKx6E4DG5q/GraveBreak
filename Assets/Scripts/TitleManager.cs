@@ -598,6 +598,7 @@ public class TitleManager : MonoBehaviour
 
 	private void OnMenuButtonContinue ()
 	{
+		MainManager.Instance.life = 2;
 		MainManager.Instance.CurrentStage (MainManager.Instance.life, MainManager.Instance.weapon);
 		MainManager.Instance.bannerView.Hide ();
 		SoundManager.Instance.PlaySe (SoundManager.SeName.SE_OK);
